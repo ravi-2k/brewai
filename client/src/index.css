@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+/*
+  Design tokens. Tailwind v4 reads @theme and turns each variable into
+  utility classes, e.g. --color-brand-600 -> bg-brand-600, text-brand-600.
+*/
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-brand-50: #f5f3ff;
+  --color-brand-100: #ede9fe;
+  --color-brand-500: #8b5cf6;
+  --color-brand-600: #7c3aed;
+  --color-brand-700: #6d28d9;
+
+  --shadow-card: 0 1px 2px rgb(16 24 40 / 0.04), 0 8px 24px rgb(16 24 40 / 0.06);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-sans text-slate-900 antialiased;
+  }
+}
+
+/* Gray/white chequered pattern, the universal "this is transparent" background. */
+@utility bg-checkerboard {
+  background-color: #fff;
+  background-image: conic-gradient(#e2e8f0 25%, transparent 0 50%, #e2e8f0 0 75%, transparent 0);
+  background-size: 20px 20px;
+}
